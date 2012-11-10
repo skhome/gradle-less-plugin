@@ -1,0 +1,9 @@
+# Gradle build artifacts
+.gradle
+build
+
+# IDEA project files
+*.iml
+*.ipr
+*.iws
+out
