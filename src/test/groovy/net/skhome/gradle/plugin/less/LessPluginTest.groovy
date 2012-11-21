@@ -194,5 +194,24 @@ class LessPluginTest {
 		assert compileTask.encoding == name
 	}
 
+	@Test
+	void shouldConfigureCustomJsWithExtension() {
+
+		// assume
+		final URL url = new URL('http://lesscss.googlecode.com/files/less-1.3.0.min.js')
+
+		// given
+		plugin.apply(project)
+
+		// when
+		project.less {
+			customJs = url
+		}
+
+		// then
+		final LessCompileTask compileTask = project.tasks.findByName(LessPlugin.COMPILE_TASK_NAME) as LessCompileTask
+		assert compileTask.customJs == url
+	}
+
 
 }

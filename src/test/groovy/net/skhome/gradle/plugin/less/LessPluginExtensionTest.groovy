@@ -194,4 +194,30 @@ class LessPluginExtensionTest {
 		assert extension.encoding
 	}
 
+	@Test
+	void shouldProvideCustomJsProperty() {
+
+		// assume
+		final String url = 'http://server/less.js'
+
+		// when
+		extension.customJs = new URL(url)
+
+		// then
+		assert extension.customJs.toString() == url
+	}
+
+	@Test
+	void shouldProvideCustomJsConvenience() {
+
+		// assume
+		final String url = 'http://server/less.js'
+
+		// when
+		extension.customJs url
+
+		// then
+		assert extension.customJs.toString() == url
+	}
+
 }

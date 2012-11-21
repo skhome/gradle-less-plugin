@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'codenarc'
-apply plugin:  'maven'
+apply plugin: 'maven'
 
 group = 'net.skhome'
 description = 'A gradle plugin to compile less to css files.'

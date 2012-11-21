@@ -134,4 +134,20 @@ class LessPluginExtension {
 		this.encoding = encoding
 	}
 
+	/**
+	 * Specifies a custom JS for the less compiler.
+	 *
+	 * Example: customJs = new URL('http://lesscss.googlecode.com/files/less-1.3.0.min.js')
+	 */
+	URL customJs
+
+	/**
+	 * Convenience method for setting a custom JS.
+	 *
+	 * Example: customJs 'http://lesscss.googlecode.com/files/less-1.3.0.min.js'
+	 */
+	void customJs(final String customJs) {
+		this.customJs = new URL(customJs)
+	}
+
 }

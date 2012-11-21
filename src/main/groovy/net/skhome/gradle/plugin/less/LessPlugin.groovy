@@ -50,6 +50,7 @@ class LessPlugin implements Plugin<Project> {
 			force = { extension.force }
 			compress = { extension.compress }
 			encoding = { extension.encoding }
+			customJs = { extension.customJs }
 		}
 	}
 
