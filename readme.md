@@ -1,6 +1,6 @@
 # About #
 
-This project is a gradle plugin to easily use a [LESS](http://www.less-css.org) compiler with your gradle build script.
+This project is a gradle plugin to easily use a [LESS](http://www.lesscss.org) compiler with your gradle build script.
 
 ## Installation ##
 
