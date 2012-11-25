@@ -11,26 +11,26 @@ import org.gradle.api.plugins.BasePlugin
  */
 class LessPlugin implements Plugin<Project> {
 
-    static final String EXTENSION_NAME = "less"
+	static final String EXTENSION_NAME = "less"
 	static final String COMPILE_TASK_NAME = "compileLESS"
 
-    private Project project
-    private LessPluginExtension extension
+	private Project project
+	private LessPluginExtension extension
 
-    void apply(final Project project) {
-        this.project = project
-	    assertDependencies()
-        createExtension()
-	    createCompileTask()
-    }
+	void apply(final Project project) {
+		this.project = project
+		assertDependencies()
+		createExtension()
+		createCompileTask()
+	}
 
 	private void assertDependencies() {
 		project.plugins.apply(BasePlugin)
 	}
 
-    private void createExtension() {
-        extension = project.extensions.create(EXTENSION_NAME, LessPluginExtension, project)
-    }
+	private void createExtension() {
+		extension = project.extensions.create(EXTENSION_NAME, LessPluginExtension, project)
+	}
 
 	private void createCompileTask() {
 		project.tasks.add(COMPILE_TASK_NAME, LessCompileTask)

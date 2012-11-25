@@ -11,87 +11,87 @@ import org.gradle.api.Project
  */
 class LessPluginExtension {
 
-    private final Project project
+	private final Project project
 
-    LessPluginExtension(final Project project) {
-        this.project = project
-    }
+	LessPluginExtension(final Project project) {
+		this.project = project
+	}
 
-    /**
-     * Contains the directory with the source files. (defaults to 'src/main/webapp/less')
-     *
-     * Example: sourceDir = file('web/less')
-     */
-    File sourceDir = project.file('src/main/webapp/less')
+	/**
+	 * Contains the directory with the source files. (defaults to 'src/main/webapp/less')
+	 *
+	 * Example: sourceDir = file('web/less')
+	 */
+	File sourceDir = project.file('src/main/webapp/less')
 
-    /**
-     * Convenience method for setting the source directory.
-     *
-     * Example: sourceDir 'web/less'
-     */
-    void sourceDir(final String dir) {
-        this.sourceDir = project.file(dir);
-    }
+	/**
+	 * Convenience method for setting the source directory.
+	 *
+	 * Example: sourceDir 'web/less'
+	 */
+	void sourceDir(final String dir) {
+		this.sourceDir = project.file(dir);
+	}
 
-    /**
-     * Contains the directory with the output files. (defaults to 'build/webapp/css')
-     *
-     * Example: outputDir = files('web/css')
-     */
-    File outputDir = project.file("src/main/webapp/css")
+	/**
+	 * Contains the directory with the output files. (defaults to 'build/webapp/css')
+	 *
+	 * Example: outputDir = files('web/css')
+	 */
+	File outputDir = project.file("src/main/webapp/css")
 
-    /**
-     * Convenience method for setting the output directory.
-     *
-     * Example: outputDir 'web/css'
-     */
-    void outputDir(final String dir) {
-        this.outputDir = project.file(dir);
-    }
+	/**
+	 * Convenience method for setting the output directory.
+	 *
+	 * Example: outputDir 'web/css'
+	 */
+	void outputDir(final String dir) {
+		this.outputDir = project.file(dir);
+	}
 
-    /**
-     * Specifies a pattern for the source files to be included. (defaults to '** / *.less')
-     *
-     * Example: includes = ['styles.less']
-     */
-    List<String> includes = ['**/*.less']
+	/**
+	 * Specifies a pattern for the source files to be included. (defaults to '** / *.less')
+	 *
+	 * Example: includes = ['styles.less']
+	 */
+	List<String> includes = ['**/*.less']
 
-    /**
-     * Convenience method for setting includes.
-     *
-     * Example: includes 'styles.less', 'animation.less'
-     */
-    void includes(final String... pattern) {
-        this.includes.clear();
-        this.includes.addAll(pattern);
-    }
+	/**
+	 * Convenience method for setting includes.
+	 *
+	 * Example: includes 'styles.less', 'animation.less'
+	 */
+	void includes(final String... pattern) {
+		this.includes.clear();
+		this.includes.addAll(pattern);
+	}
 
-    /**
-     * Specifies a pattern for the source files to be excluded.
-     *
-     * Example: excludes = ['reset.less']
-     */
-    List<String> excludes = []
+	/**
+	 * Specifies a pattern for the source files to be excluded.
+	 *
+	 * Example: excludes = ['reset.less']
+	 */
+	List<String> excludes = []
 
-    /**
-     * Convenience method for setting excludes.
-     *
-     * Example: excludes 'foo.less', 'bar.less'
-     */
-    void excludes(final String... pattern) {
-        this.excludes.clear();
-        this.excludes.addAll(pattern);
-    }
+	/**
+	 * Convenience method for setting excludes.
+	 *
+	 * Example: excludes 'foo.less', 'bar.less'
+	 */
+	void excludes(final String... pattern) {
+		this.excludes.clear();
+		this.excludes.addAll(pattern);
+	}
 
-    /**
-     * Specifies if only to compile the LESS input file in case the
-     * LESS source has been modified (including imports) or if the
-     * output file does not exists. If set to true input files will
-     * always be recompiled. (defaults to false)
-     *
-     * Example: force = true
-     */
-    boolean force = false
+	/**
+	 * Specifies if only to compile the LESS input file in case the
+	 * LESS source has been modified (including imports) or if the
+	 * output file does not exists. If set to true input files will
+	 * always be recompiled. (defaults to false)
+	 *
+	 * Example: force = true
+	 */
+	boolean force = false
 
 	/**
 	 * Convenience method for setting force.
