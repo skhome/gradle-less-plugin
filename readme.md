@@ -37,7 +37,7 @@ The plugin will add a `less` extension to your build script which you can use to
 		outputDir "${webAppDirName}/css"
 		includes '**/*.less'
 		excludes 'reset.less'
-		force true
 		compress true
-	    customJs 'http://lesscss.googlecode.com/files/less-1.3.0.min.js'
 	}
+
+For a documentation on all configuration options please see the plugin [extension](https://github.com/skhome/gradle-less-plugin/blob/master/src/main/groovy/net/skhome/gradle/plugin/less/LessPluginExtension.groovy)

@@ -69,14 +69,14 @@ class LessPluginExtension {
     /**
      * Specifies a pattern for the source files to be excluded.
      *
-     * Example: includes = ['reset.less']
+     * Example: excludes = ['reset.less']
      */
     List<String> excludes = []
 
     /**
      * Convenience method for setting excludes.
      *
-     * Example: includes 'foo.less', 'bar.less'
+     * Example: excludes 'foo.less', 'bar.less'
      */
     void excludes(final String... pattern) {
         this.excludes.clear();
