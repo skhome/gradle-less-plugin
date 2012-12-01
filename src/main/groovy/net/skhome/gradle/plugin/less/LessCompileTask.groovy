@@ -67,7 +67,6 @@ class LessCompileTask extends DefaultTask {
 	/**
 	 * Specifies a custom less JS file
 	 */
-	@Input
 	URL customJs
 
 	private FileResolver fileResolver
@@ -84,7 +83,10 @@ class LessCompileTask extends DefaultTask {
 		LessCompiler compiler = new LessCompiler()
 		compiler.setCompress(getCompress())
 		compiler.setEncoding(getEncoding())
-		compiler.setCustomJs(getCustomJs())
+
+		if (getCustomJs() != null) {
+			compiler.setCustomJs(getCustomJs())
+		}
 
 		patternSet.setIncludes(getIncludes())
 		patternSet.setExcludes(getExcludes())

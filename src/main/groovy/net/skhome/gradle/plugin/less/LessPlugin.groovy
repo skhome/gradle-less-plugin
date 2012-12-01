@@ -41,6 +41,7 @@ class LessPlugin implements Plugin<Project> {
 		}
 	}
 
+	@SuppressWarnings("GroovyMissingReturnStatement")
 	private void configureCompileTask(final LessCompileTask task) {
 		task.conventionMapping.with {
 			sourceDir = { extension.sourceDir }
@@ -50,7 +51,9 @@ class LessPlugin implements Plugin<Project> {
 			force = { extension.force }
 			compress = { extension.compress }
 			encoding = { extension.encoding }
-			customJs = { extension.customJs }
+			if (extension.hasProperty("customJs")) {
+				customJs = { extension.customJs }
+			}
 		}
 	}
 
