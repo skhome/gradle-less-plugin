@@ -41,3 +41,10 @@ The plugin will add a `less` extension to your build script which you can use to
 	}
 
 For a documentation on all configuration options please see the plugin [extension](https://github.com/skhome/gradle-less-plugin/blob/master/src/main/groovy/net/skhome/gradle/plugin/less/LessPluginExtension.groovy)
+
+## LICENSE ##
+
+Copyright © 2000 Sascha Krueger
+This work is free. You can redistribute it and/or modify it under the
+terms of the Do What The Fuck You Want To Public License, Version 2,
+as published by Sam Hocevar. See the COPYING file for more details.
