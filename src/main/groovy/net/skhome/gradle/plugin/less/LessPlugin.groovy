@@ -33,8 +33,14 @@ class LessPlugin implements Plugin<Project> {
 	}
 
 	private void createCompileTask() {
-		project.tasks.add(COMPILE_TASK_NAME, LessCompileTask)
-		project.tasks.findByName(BasePlugin.ASSEMBLE_TASK_NAME).dependsOn(COMPILE_TASK_NAME);
+
+        if (project.tasks.respondsTo('create', String, Class)) {
+            project.tasks.create(COMPILE_TASK_NAME, LessCompileTask)
+        } else {
+            project.tasks.add(COMPILE_TASK_NAME, LessCompileTask)
+        }
+
+        project.tasks.findByName(BasePlugin.ASSEMBLE_TASK_NAME).dependsOn(COMPILE_TASK_NAME);
 
 		project.tasks.withType(LessCompileTask) { LessCompileTask task ->
 			configureCompileTask(task)
